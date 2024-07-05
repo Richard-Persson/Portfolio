@@ -1,0 +1,111 @@
+.headerConversion{
+    padding: 30px 0px;
+    margin: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 60px;
+    color: rgb(25, 139, 247);
+   
+    
+
+    text-align: center;
+}
+
+
+
+
+.converter{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+
+  h2{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+  }
+  
+  h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+  }
+  p{
+    cursor: pointer;
+  }
+  select{
+  
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  select:focus{
+    outline: none;
+    border-color: #007bff; 
+  }
+  
+  input {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .knapp{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .knapp:hover{
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+
+
+
+
+
+
+
+.footerConversion{
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    
+}
+
+.github-logo {
+    width: 20px; /* Adjust the width and height according to your design */
+    height: 20px;
+  }
+
+  p a{
+    text-decoration: none;
+  }
+

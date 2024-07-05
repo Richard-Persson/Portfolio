@@ -1,0 +1,68 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+h1{
+  position: relative;
+  text-align: center;
+  color: white;
+  font-size: 8em;
+  transition: 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
+
+  text-shadow: 0 1px 0 #000000, 0 2px 0 #000000,
+  0 3px 0 #000000, 0 4px 0 #000000,
+  0 5px 0 #000000, 0 6px 0 #000000,
+
+  0 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+h2{
+  margin:50px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: white;
+  text-shadow: 0 1px 0 #000000, 0 2px 0 #000000,
+  0 3px 0 #000000, 0 4px 0 #000000,
+  0 5px 0 #000000, 0 6px 0 #000000,
+
+  0 5px 5px rgba(0, 0, 0, 0.5);
+
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px; 
+}
+
+.tools{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px; 
+}
+
+
+
+
+.sql{
+  width: 100px;
+  height: 50px;
+}
+
+.java{
+  height: 100px;
+  width: 20px;
+}
+.cs{
+  height: 100px;
+}
+.spring{
+  height: 100px;
+  width: 110px;
+}

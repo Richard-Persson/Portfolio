@@ -1,0 +1,18 @@
+
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #7b7272, #6d7b8f, #256eaa, #38b3e4, #00101a, #ffe2e2); /* A soft, soothing gradient with pink and peach tones */
+  background-size: 300% 300%;
+  animation: gradientAnimation 10s ease infinite; /* Smooth animation */
+}
+
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}

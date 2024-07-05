@@ -1,0 +1,11 @@
+
+
+.Ball{
+    width: 100px;
+    height: 100px;
+    object-fit:contain;
+    border-radius: 100px;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid black;
+}

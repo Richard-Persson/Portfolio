@@ -1,0 +1,22 @@
+.footer{
+    
+    padding: 10px;
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    
+}
+
+.github-logo {
+    width: 20px; /* Adjust the width and height according to your design */
+    height: 20px;
+  }
+
+  p a{
+    text-decoration: none;
+  }
+
