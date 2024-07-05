@@ -1,5 +1,5 @@
 {
-  "homepage": "https://richard-persson.github.io/Richard.github.io/",
+  "homepage": "https://richard-persson.github.io/Portfolio/",
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
@@ -10,7 +10,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy":"npm run build",
-    "deploy":"gh-pages -d build"
+    "deploy":"gh-pages -d dist"
   },
   "dependencies": {
     "@everapi/currencyapi-js": "^1.0.6",
