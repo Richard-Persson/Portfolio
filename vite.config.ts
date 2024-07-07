@@ -9,5 +9,6 @@ export default defineConfig(({ mode }) => {
       'process.env.REACT_APP_API_KEY': JSON.stringify('cur_live_0mUnm9U8k2ly1QiT97glSz7bl0UfPGom9DETT1xI')
     },
     plugins: [react()],
+    base: "/Portfolio/"
   }
 })

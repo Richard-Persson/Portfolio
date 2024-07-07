@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import Ball from "../../balls/balls"
 import Game from './TicTacToeGame'
 import  "./TicTacToe.css"
+
 export function TicTacToe(){
 
 

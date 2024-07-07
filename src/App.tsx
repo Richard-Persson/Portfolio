@@ -1,7 +1,7 @@
 import './App.css'
 
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './components/pages/home/home'
+import { HashRouter as Router, Routes, Route, Outlet } from 'react-router-dom'
+import { Home }from './components/pages/home/home'
 import { TicTacToe } from './components/pages/TicTacToe/TicTacToe'
 import { Calculator } from './components/pages/Calculator/Calculator'
 import {Conversion} from './components/pages/Conversion/conversion'
@@ -21,7 +21,11 @@ function App() {
         <Route path='/Conversion' element={<Conversion/>}/>
       </Routes>
     </Router>
+
+    <Outlet/>
   </>
+
+  
   )
 }
 
