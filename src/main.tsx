@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import {Home} from "./components/pages/home/home.tsx"
 import {TicTacToe} from "./components/pages/TicTacToe/TicTacToe.tsx"
 import {Conversion} from "./components/pages/Conversion/conversion.tsx"
+import { Calculator } from './components/pages/Calculator/Calculator.tsx'
 
 const router = createBrowserRouter([
 
@@ -15,15 +16,21 @@ const router = createBrowserRouter([
     element:<App/>,
     children:[
       { 
-        path:"Portfolio/",
+        path:"/Portfolio/",
         element:<Home/>
       },
       { 
-        path:"Portfolio/TicTacToe",
+        path:"/Portfolio/TicTacToe",
         element:<TicTacToe/>
       },
+
       { 
-        path:"Portfolio/Conversion",
+        path:"/Portfolio/Calculator",
+        element:<Calculator/>
+      },
+      
+      { 
+        path:"/Portfolio/Conversion",
         element:<Conversion/>
       },
     ]

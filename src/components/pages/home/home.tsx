@@ -4,7 +4,7 @@ import Card from '../../card/card'
 import Footer from '../../footer/Footer'
 import Ball from '../../balls/balls'
 
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 export  function Home() {
 
@@ -17,20 +17,20 @@ export  function Home() {
       <h2>Projects</h2>
   
       <div className="cards">
-        <Link className='link' to="/TicTacToe">
+        <Link className='link' to="/Portfolio/TicTacToe">
         <Card name='Tic Tac Toe' img='TicTacToe.png' tools={'-HTML\n-CSS\n-JavaScript'} />
         </Link>
-        <Link className='link' to="/Calculator">
+        <Link className='link' to="/Portfolio/Calculator">
         <Card name='Calculator' img='Calculator.png' tools={'-HTML\n-CSS\n-JavaScript + React'}/>
         </Link >
-        <Link className='link' to="/Conversion">
+        <Link className='link' to="/Portfolio/Conversion">
         <Card name='Conversion' img='Conversion.png'tools={'-HTML\n-CSS\n-JavaScript\n-Currency API'}/>
         </Link>
         <Card name='SolarSystem' img='SolarSystem.png' tools={'-C#\n-WPF'}/>
         <Card name='Yatzy' img='Yatzy.png'tools={'-Java\n-SpringBoot MVC\n-JavaScript\n-JSTL\n-SQL\n'}/> 
         <Card name='Progress bar' img=''/> 
       </div>
-      
+    
       <h2> Tools </h2>
   
       <div className='tools'>
