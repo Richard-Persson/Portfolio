@@ -13,7 +13,7 @@ function App() {
   return (
     <>
 
-    <Router basename="/Portfolio">
+    <Router basename="/">
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/TicTacToe' element={<TicTacToe/>}/>

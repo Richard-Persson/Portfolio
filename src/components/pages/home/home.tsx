@@ -41,8 +41,7 @@ export default function Home() {
         <Ball  src="Sql.png"/>
         <Ball  src='js.png'/>
       </div>
-  
-      <h2> Demo </h2>
+
   
   
       <Footer/>
