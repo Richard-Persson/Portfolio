@@ -19,11 +19,11 @@ const router = createBrowserRouter([
         element:<Home/>
       },
       { 
-        path:"Portfolio/",
+        path:"Portfolio/TicTacToe",
         element:<TicTacToe/>
       },
       { 
-        path:"Portfolio/",
+        path:"Portfolio/Conversion",
         element:<Conversion/>
       },
     ]
