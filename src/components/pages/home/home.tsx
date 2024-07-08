@@ -4,7 +4,7 @@ import Card from '../../card/card'
 import Footer from '../../footer/Footer'
 import Ball from '../../balls/balls'
 
-import { Link, Outlet } from 'react-router-dom'
+import { Link,  } from 'react-router-dom'
 
 export  function Home() {
 

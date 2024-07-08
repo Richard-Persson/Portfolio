@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom"
+import { Link, } from "react-router-dom"
 import Ball from "../../balls/balls"
 import Game from './TicTacToeGame'
 import  "./TicTacToe.css"
