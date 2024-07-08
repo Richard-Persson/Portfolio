@@ -28,7 +28,7 @@ export  function Home() {
         </Link>
         <Card name='SolarSystem' img='SolarSystem.png' tools={'-C#\n-WPF'}/>
         <Card name='Yatzy' img='Yatzy.png'tools={'-Java\n-SpringBoot MVC\n-JavaScript\n-JSTL\n-SQL\n'}/> 
-        <Card name='Progress bar' img=''/> 
+       
       </div>
     
       <h2> Tools </h2>
