@@ -1,10 +1,4 @@
-body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
+
   .nav {
     text-align: center;
   }
@@ -143,9 +137,7 @@ body {
    
 }
 
-.toolsTTT{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 400px; 
-}
+.title{
+  margin-top: 50px;}
+
   

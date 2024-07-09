@@ -3,6 +3,9 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  padding: 2rem; /* Adjust padding for the content */
+  padding-top: 4rem; /* Add extra padding-top to account for header height */
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 

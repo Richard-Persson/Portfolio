@@ -1,21 +1,15 @@
-import { Link, } from "react-router-dom"
-import Ball from "../../balls/balls"
+
 import Game from './TicTacToeGame'
 import  "./TicTacToe.css"
+import Header from '../../header/Header'
 
 export function TicTacToe(){
 
 
     return(<>
-        <div className="toolsTTT">
-            <Link to="/Portfolio/" >
-            <button className="back">Home</button>
-            </Link>
-            <Ball src="js.png"/>
-            <Ball src="react.png"/>
-           
-        </div>
-        <h1>TicTacToe</h1>
+    <Header/>
+     
+        <h1 className='title'>TicTacToe</h1>
          <Game/>
      
 

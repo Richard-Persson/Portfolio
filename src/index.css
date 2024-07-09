@@ -6,9 +6,10 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background: linear-gradient(135deg, #7b7272, #6d7b8f, #256eaa, #38b3e4, #00101a, #ffe2e2); /* A soft, soothing gradient with pink and peach tones */
+  background: linear-gradient(rgb(60, 59, 59),grey,white); 
   background-size: 300% 300%;
-  animation: gradientAnimation 10s ease infinite; /* Smooth animation */
+  animation: gradientAnimation 10s ease infinite; 
+  overflow-x: hidden; 
 }
 
 

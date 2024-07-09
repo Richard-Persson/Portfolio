@@ -1,10 +1,12 @@
 
-import { Link } from "react-router-dom";
+
 import { useState } from "react";
 import { useEffect} from 'react';
 import './Calculator.css'
 import sound from '../../../assets/sound.mp3'
 import click from '../../../assets/click.mp3'
+import Header from '../../header/Header'
+
 export function Calculator(){
 
 //HOOKS
@@ -76,11 +78,7 @@ function calculate(){
 
     return(
         <>
-        <div className="toolsTTT">
-          <Link to="/Portfolio/" >
-            <button className="back">Home</button>
-        </Link>
-        </div>
+        <Header/>
         <h1>Calculator</h1>
         <div className="calculator">
          <input type="text" className="display" value={display}  readOnly ></input>

@@ -14,3 +14,29 @@ Link{
     text-decoration: none;
   color: black;
 }
+
+
+.heroPage{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px; 
+}
+
+.heroPage .title{
+  color: white;
+}
+
+.heroPage .title h1{
+
+  font-size: 100px;
+}
+
+.heroPage .title p{
+  font-size: 30px;
+}
+
+.heroPage .image img{
+  width: 700px;
+  height: 500px;
+  object-fit: contain;
+}

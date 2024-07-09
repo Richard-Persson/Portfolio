@@ -10,12 +10,23 @@ export  function Home() {
 
     return (
       <>
-  
-    
+
       <Header/>
-      <h1>Richard Persson</h1>
-      <h2>Projects</h2>
+      <div className="heroPage">
+
+        <div className="title">
+          <h1>Richard Persson</h1>
+          <p>Student / Aspiring Full-Stack developer</p>
+        </div>
+
+        <div className="image">
+          <img src='computer.png'></img>
+
+        </div>
   
+      </div>
+
+      <h2>Projects</h2>
       <div className="cards">
         <Link className='link' to="/Portfolio/TicTacToe">
         <Card name='Tic Tac Toe' img='TicTacToe.png' tools={'-HTML\n-CSS\n-JavaScript'} />
