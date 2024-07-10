@@ -39,4 +39,79 @@ Link{
   width: 700px;
   height: 500px;
   object-fit: contain;
+
+}
+
+@media (max-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tools {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1045px) {
+  .heroPage .image img{
+
+    width: 400px;
+    height: 500px;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tools {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .heroPage{
+
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .title{
+    margin: 0px;
+  }
+  .heroPage .image img{
+
+    width: 500px;
+    height: 400px;
+  }
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    margin: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tools {
+    grid-template-columns: 1fr;
+  }
+
+  .heroPage .image img{
+
+    width: 400px;
+    height: 300px;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+    margin: 10px;
+  }
 }

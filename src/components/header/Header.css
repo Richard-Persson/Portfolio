@@ -43,3 +43,50 @@
 
 }
 
+
+
+
+@media (max-width: 1245px) {
+
+    .header {
+        text-align: center;
+        grid-template-columns: repeat(2, 500px);
+    }
+    
+    .header .text {
+        gap: 50px;
+        margin-left: 100px;
+    }
+
+
+
+}
+@media (max-width: 768px) {
+    .header {
+        text-align: center;
+        grid-template-columns: repeat(2, 200px);
+    }
+
+    .header .text {
+        gap: 50px;
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 5px;
+        grid-template-columns: repeat(2, 100px);
+
+    }
+
+    .header .logo img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .header .text {
+        gap: 50px;
+    }
+}
+
