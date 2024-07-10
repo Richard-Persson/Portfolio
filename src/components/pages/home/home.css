@@ -39,6 +39,7 @@ Link{
   width: 700px;
   height: 500px;
   object-fit: contain;
+  box-sizing: border-box;
 
 }
 
@@ -107,11 +108,32 @@ Link{
   }
 
   h1 {
-    font-size: 3em;
+    font-size: 1em;
   }
 
   h2 {
-    font-size: 1.2em;
+    font-size: 0.2em;
+    margin: 10px;
+  }
+}
+
+@media (max-width: 350px) {
+  .tools {
+    grid-template-columns: 1fr;
+  }
+
+  .heroPage .image img{
+
+    width: 300px;
+    height: 200px;
+  }
+
+  h1 {
+    font-size: 10px;
+  }
+
+  h2 {
+    font-size: 0.2em;
     margin: 10px;
   }
 }
