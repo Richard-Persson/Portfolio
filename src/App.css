@@ -6,7 +6,6 @@
   padding: 2rem; /* Adjust padding for the content */
   padding-top: 4rem; /* Add extra padding-top to account for header height */
   overflow-x: hidden; /* Prevent horizontal overflow */
-  
 }
 
 
@@ -14,7 +13,7 @@ h1{
   position: relative;
   text-align: center;
   color: white;
-  font-size: 8em;
+  font-size: 10px;
   transition: 0.5s;
   font-family: Arial, Helvetica, sans-serif;
 

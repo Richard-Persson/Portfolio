@@ -15,7 +15,7 @@ export  function Home() {
       <div className="heroPage">
 
         <div className="title">
-          <h1>Richard Persson</h1>
+          <h1 className='navn'>Richard Persson</h1>
           <p>Student / Aspiring Full-Stack developer</p>
         </div>
 
