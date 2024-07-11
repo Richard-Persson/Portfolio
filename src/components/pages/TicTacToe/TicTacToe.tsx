@@ -9,7 +9,7 @@ export function TicTacToe(){
     return(<>
     <Header/>
      
-        <h1 className='title'>TicTacToe</h1>
+        <h1 className='title__tictactoe'>TicTacToe</h1>
          <Game/>
      
 

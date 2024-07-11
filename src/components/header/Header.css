@@ -5,10 +5,11 @@
 .header{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 10px;
+    padding:10px ;
+    padding-right: 100px;
     background-color: black;
     margin: 0;
-    width: 100vw;
+    width: 100%;
     position: absolute; 
     top: 0;
     left: 0;
@@ -64,20 +65,16 @@
 @media (max-width: 768px) {
     .header {
         text-align: center;
-        grid-template-columns: repeat(2, 200px);
+        padding-right: 100px;
     }
 
-    .header .text {
-        gap: 50px;
-        margin-left: 0px;
-    }
+
 }
 
 @media (max-width: 480px) {
     .header {
-        padding: 5px;
+        padding-right: 100px;
         grid-template-columns: repeat(2, 100px);
-
     }
 
     .header .logo img {
@@ -87,6 +84,7 @@
 
     .header .text {
         gap: 50px;
+        
     }
 }
 

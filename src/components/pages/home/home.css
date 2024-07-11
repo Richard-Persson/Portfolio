@@ -120,3 +120,24 @@ Link{
   }
 }
 
+@media (max-width: 380px) {
+  .tools {
+    grid-template-columns: 1fr;
+  }
+
+  .heroPage .image img{
+
+    width: 350px;
+    height: 250px;
+  }
+
+  .heroPage .title h1{
+
+    font-size: 25px;
+  }
+
+  .heroPage .title p{
+    font-size: 15px;
+  }
+}
+

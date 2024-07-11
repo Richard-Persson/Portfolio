@@ -14,27 +14,6 @@ body {
 
 
 
-
-@media (max-width: 768px) {
-  body {
-    padding: 1rem;
-  }
-
-  h1 {
-    font-size: 2em;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    padding: 0.5rem;
-  }
-
-  h1 {
-    font-size: 1.5em;
-  }
-}
-
 /* Keyframes for background animation */
 @keyframes gradientAnimation {
   0% { background-position: 0% 50%; }

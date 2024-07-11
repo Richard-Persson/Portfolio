@@ -3,6 +3,14 @@
     text-align: center;
   }
   
+  .title__tictactoe {
+    text-align: center;
+    margin-top: 50px;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
  
   .game-container {
     display: flex;
