@@ -15,7 +15,7 @@ export  function Home() {
       <div className="heroPage">
 
         <div className="title">
-          <h1 className='navn'>Richard Persson</h1>
+          <h1 className='navn Homepage__Text'>Richard Persson</h1>
           <p>Student / Aspiring Full-Stack developer</p>
         </div>
 
@@ -26,7 +26,7 @@ export  function Home() {
   
       </div>
 
-      <h2>Projects</h2>
+      <h2 className='Homepage_Text'>Projects</h2>
       <div className="cards">
         <Link className='link' to="/Portfolio/TicTacToe">
         <Card name='Tic Tac Toe' img='TicTacToe.png' tools={'-HTML\n-CSS\n-JavaScript'} />
@@ -42,7 +42,7 @@ export  function Home() {
        
       </div>
     
-      <h2> Tools </h2>
+      <h2 className='Homepage__text'> Tools </h2>
   
       <div className='tools'>
         <Ball  src="react.png"/>

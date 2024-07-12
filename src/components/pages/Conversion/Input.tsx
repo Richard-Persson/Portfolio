@@ -42,7 +42,7 @@ function Input() {
   return (
     <>
     <div className="main">
-     <h2>Convert any currency EUR, NOK, etc.</h2>
+     <h2 className='ConvertText'>Convert any currency EUR, NOK, etc.</h2>
       <div className="converter">
 
        

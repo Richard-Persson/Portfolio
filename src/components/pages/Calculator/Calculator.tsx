@@ -79,7 +79,7 @@ function calculate(){
     return(
         <>
         <Header/>
-        <h1>Calculator</h1>
+        <h1 className="Calculator__Title">Calculator</h1>
         <div className="calculator">
          <input type="text" className="display" value={display}  readOnly ></input>
          <div className="buttons">

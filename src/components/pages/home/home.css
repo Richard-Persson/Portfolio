@@ -8,6 +8,21 @@ Link{
   
 }
 
+.Homepage__Text{
+  position: relative;
+  text-align: center;
+  color: white;
+  transition: 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
+
+  text-shadow: 0 1px 0 #000000, 0 2px 0 #000000,
+  0 3px 0 #000000, 0 4px 0 #000000,
+  0 5px 0 #000000, 0 6px 0 #000000,
+
+  0 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+
 
 .link{
     border-style: none;
