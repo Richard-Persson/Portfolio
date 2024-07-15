@@ -19,7 +19,7 @@ return(<>
 
 
 <h1 className="title"> About me </h1>
-<p className="text">{år} year old student, studying computer engineering at høgskulen på vestlandet. Making things for fun :)   </p>
+<p className="text">{år} year old student, studying computer engineering at høgskulen på vestlandet. </p>
 
 
 </>)
