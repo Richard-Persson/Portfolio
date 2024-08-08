@@ -1,7 +1,7 @@
 
-import {Box,OrbitControls,Torus,Sphere,Circle, useKeyboardControls, } from "@react-three/drei";
+import {Box,OrbitControls,Torus, useKeyboardControls, } from "@react-three/drei";
 import { RigidBody, RapierRigidBody} from "@react-three/rapier";
-import { useRef, useEffect, useState, } from "react";
+import { useRef,  useState, } from "react";
 import { controls } from "./Shapes";
 import { useFrame } from "@react-three/fiber";
 
@@ -11,7 +11,7 @@ export function Experience(){
 
 
     const car = useRef<RapierRigidBody>(null);
-    const [hover,setHover] = useState(false)
+    const [,setHover] = useState(false)
 
     const jumpPressed = useKeyboardControls((state)=>state[controls.jump])
     const upPressed = useKeyboardControls((state)=>state[controls.forward])
