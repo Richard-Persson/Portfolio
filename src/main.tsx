@@ -8,6 +8,7 @@ import {TicTacToe} from "./components/pages/TicTacToe/TicTacToe.tsx"
 import {Conversion} from "./components/pages/Conversion/conversion.tsx"
 import { Calculator } from './components/pages/Calculator/Calculator.tsx'
 import { About } from './components/pages/About/About.tsx'
+import  { Shapes }  from './components/pages/Shapes/Shapes.tsx'
 
 const router = createBrowserRouter([
 
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       { 
         path:"/Portfolio/About",
         element:<About/>
+      },
+      { 
+        path:"/Portfolio/Shapes",
+        element:<Shapes/>
       },
     ]
   }

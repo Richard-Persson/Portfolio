@@ -3,7 +3,6 @@ import Header from '../../header/Header'
 import Card from '../../card/card'
 import Footer from '../../footer/Footer'
 import Ball from '../../balls/balls'
-
 import { Link,  } from 'react-router-dom'
 
 export  function Home() {
@@ -38,7 +37,10 @@ export  function Home() {
         <Card name='Conversion' img='Conversion.png'tools={'-HTML\n-CSS\n-JavaScript\n-Currency API'}/>
         </Link>
         <Card name='SolarSystem' img='SolarSystem.png' tools={'-C#\n-WPF'}/>
-        <Card name='Yatzy' img='Yatzy.png'tools={'-Java\n-SpringBoot MVC\n-JavaScript\n-JSTL\n-SQL\n'}/> 
+        <Card name='Yatzy' img='Yatzy.png'tools={'-Java\n-SpringBoot MVC\n-JavaScript\n-JSTL\n-SQL\n'}/>
+        <Link className='link' to='/Portfolio/Shapes'>
+        <Card name='3D (Work in progress)' img='3d.jpg'/> 
+        </Link>
        
       </div>
     

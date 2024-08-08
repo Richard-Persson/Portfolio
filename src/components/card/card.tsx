@@ -12,7 +12,7 @@ const Card = (props: CardProps) => {
 
 
     function beskrivelse(){
-        setShowText(!showText);
+        //setShowText(!showText); //Fix this later
     }
 
 return(<>
@@ -22,6 +22,7 @@ return(<>
     <img onClick={beskrivelse} className='cardImg' src={props.img} />
 
     {showText && <div className="overlayText" onClick={beskrivelse}>  <br/>{props.tools}<br/></div>}
+    
 
     </div>
     <p className="desc">{props.name}</p> 
