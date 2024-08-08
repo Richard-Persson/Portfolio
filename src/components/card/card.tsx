@@ -7,7 +7,7 @@ import { CardProps } from '../type'
 const Card = (props: CardProps) => {
 
     //Hook
-    const [showText, setShowText] = useState<boolean>(false);
+    const [showText,] = useState<boolean>(false);
 
 
 
