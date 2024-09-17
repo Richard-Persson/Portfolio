@@ -1,9 +1,11 @@
 
 import {Box,OrbitControls,Torus, useKeyboardControls, } from "@react-three/drei";
-import { RigidBody, RapierRigidBody} from "@react-three/rapier";
+import { RigidBody, RapierRigidBody,quat} from "@react-three/rapier";
 import { useRef,  useState, } from "react";
 import { controls } from "./Shapes";
 import { useFrame } from "@react-three/fiber";
+
+import * as THREE from "three";
 
 export function Experience(){
 
@@ -39,11 +41,21 @@ export function Experience(){
         
     }
 
+    const kicker = useRef<any>();
+
+    useFrame((_state,delta)=>{
+
+      const currentRotation = quat(kicker.current.rotation())
+      const increaseRotation = new THREE.Quaternion().setFromAxisAngle( new THREE.Vector3(0,1,0), delta * 2 )
+      currentRotation.multiply(increaseRotation);
+      kicker.current.setNextKinematicRotation(currentRotation);
+    })
+
 
 
       function jump(){
         if(isOnFloor.current)
-        car.current?.applyImpulse({x:4 , y:40, z:0},false)
+        car.current?.applyImpulse({x:4 , y:10, z:0},false)
         isOnFloor.current = false;
       }
 
@@ -56,8 +68,6 @@ export function Experience(){
 
       const isOnFloor=useRef(true)
 
-      const wallHeight = 5
-
     return(<>
     
         
@@ -68,38 +78,31 @@ export function Experience(){
 
 
 
-        //Car
+        //BOX
        <RigidBody type="dynamic" name="triangle" colliders="hull" position={[1,2,1]} ref={car} 
        onCollisionEnter={(e)=>{if(e.rigidBodyObject?.name==="floor"){isOnFloor.current = true}}}
        onCollisionExit={(e)=>{if(e.rigidBodyObject?.name==="floor"){isOnFloor.current = false}}}>
-         <Box 
-         position={[0,0,0]} 
-         args={[5,0.1,5]} 
+         
+      
+         <Box position={[0,0,0]} args={[2,2,2]}
          onPointerEnter={()=>setHover(true)} 
          onPointerLeave={()=>setHover(false)}
          onClick={jump}>
-        
-         <meshBasicMaterial color="cyan"/>
-         </Box>
-         <Box position={[0,0.5,0]} args={[2.5,1,2.5]}>
+       
          <meshBasicMaterial color="black"/>
          </Box>
-         <Torus position={[2.5,0,2.5]} args={[0.2]}>
-
-        <meshBasicMaterial color="limegreen"/>
-
-         </Torus>
-         <Torus position={[-2.5,0,2.5]} args={[0.2]}/>
-         <Torus position={[2.5,0,-2.5]} args={[0.2]}/>
-         <Torus position={[-2.5,0,-2.5]} args={[0.2]}/>
-         
+      
         </RigidBody>
 
-        //BOX
-        <RigidBody type="dynamic" name="box">
-         <Box position={[5,2,5]}>
-         <meshBasicMaterial color="green>"/>
-         </Box>
+        //KICKER
+        <RigidBody type="kinematicPosition" position={[0,0.75,0]} ref={kicker}>
+         <group position={[2.5,0,0]}>
+
+          <Box args={[15,0.5,0.5]}>
+          <meshBasicMaterial color="green>"/>
+           </Box>
+         </group>
+       
         </RigidBody>
 
 
@@ -108,27 +111,9 @@ export function Experience(){
 
        
 
-        <RigidBody  type="fixed" name="wall" colliders="cuboid">
-         <Box position={[14.5,1,0]} args={[1,wallHeight,30]}>
-         <meshStandardMaterial color="red"/>     
-         </Box>
-     
-         <Box position={[0,1,15]} args={[30,wallHeight,1]}>
-         <meshStandardMaterial color="red"/>     
-         </Box>
-      
-         <Box position={[0,1,-15]} args={[30,wallHeight,1]}>
-         <meshStandardMaterial color="red"/>     
-         </Box>
-         <Box position={[-14.5,1,0]} args={[1,wallHeight,30]}>
-         <meshStandardMaterial color="red"/>     
-         </Box>
-        </RigidBody>
-
-
         //FLOOR
         <RigidBody  type="fixed" name="floor" friction={2}>
-         <Box position={[0,0,0]} args={[30,1,30]}>
+         <Box position={[0,0,0]} args={[20,1,20]}>
          <meshStandardMaterial color="blue"/>     
          </Box>
         </RigidBody>
