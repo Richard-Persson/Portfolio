@@ -1,5 +1,5 @@
 
-import {Box,OrbitControls,Torus, useKeyboardControls, } from "@react-three/drei";
+import {Box,OrbitControls, useKeyboardControls, } from "@react-three/drei";
 import { RigidBody, RapierRigidBody,quat} from "@react-three/rapier";
 import { useRef,  useState, } from "react";
 import { controls } from "./Shapes";
@@ -71,10 +71,10 @@ export function Experience(){
     return(<>
     
         
-
-    <ambientLight intensity={0.5} />
-    <directionalLight position={[-10, 10, 0]} intensity={0.4} />
-    <OrbitControls/>
+      //LIGHT
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[-10, 10, 0]} intensity={0.4} />
+      <OrbitControls/>
 
 
 
