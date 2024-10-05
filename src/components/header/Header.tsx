@@ -12,7 +12,10 @@ return( <>
 
 <div className="header">
     <div className='logo'>
+     <Link to="/Portfolio/" className='link'>
         <img src='RP.png'/>
+    </Link>
+        
     </div>
     
     <div className="text">

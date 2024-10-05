@@ -83,22 +83,22 @@ function calculate(){
         <div className="calculator">
          <input type="text" className="display" value={display}  readOnly ></input>
          <div className="buttons">
-            <button onClick={()=>handleValue("7")}>7</button>
-            <button onClick={()=>handleValue("8")}>8</button>
-            <button onClick={()=>handleValue("9")}>9</button>
-            <button onClick={()=>handleValue ("/")}className="operator">/</button>
-            <button onClick={()=>handleValue("4")}>4</button>
-            <button onClick={()=>handleValue("5")}>5</button>
-            <button onClick={()=>handleValue("6")}>6</button>
-            <button onClick={()=>handleValue("*")} className="operator">*</button>
-            <button onClick={()=>handleValue("1")}>1</button>
-            <button onClick={()=>handleValue("2")}>2</button>
-            <button onClick={()=>handleValue("3")}>3</button>
-            <button onClick={()=>handleValue("-")}  className="operator">-</button>
-            <button onClick={()=>handleValue('0')}>0</button>
-            <button onClick={clearDisplay}>C</button>
-            <button onClick={calculate} className="equal">=</button>
-            <button onClick={()=>handleValue("+")}className="operator">+</button>
+            <button className="kalkulator_knapper" onClick={()=>handleValue("7")}>7</button>
+            <button className="kalkulator_knapper" onClick={()=>handleValue("8")}>8</button>
+            <button className="kalkulator_knapper"onClick={()=>handleValue("9")}>9</button>
+            <button onClick={()=>handleValue ("/")}className="operator kalkulator_knapper">/</button>
+            <button className="kalkulator_knapper" onClick={()=>handleValue("4")}>4</button>
+            <button className="kalkulator_knapper" onClick={()=>handleValue("5")}>5</button>
+            <button className="kalkulator_knapper" onClick={()=>handleValue("6")}>6</button>
+            <button onClick={()=>handleValue("*")} className="operator kalkulator_knapper">*</button>
+            <button className="kalkulator_knapper" onClick={()=>handleValue("1")}>1</button>
+            <button className="kalkulator_knapper" onClick={()=>handleValue("2")}>2</button>
+            <button className="kalkulator_knapper" onClick={()=>handleValue("3")}>3</button>
+            <button onClick={()=>handleValue("-")}  className="operator kalkulator_knapper">-</button>
+            <button className="kalkulator_knapper" onClick={()=>handleValue('0')}>0</button>
+            <button className="kalkulator_knapper" onClick={clearDisplay}>C</button>
+            <button onClick={calculate} className="equal kalkulator_knapper">=</button>
+            <button onClick={()=>handleValue("+")}className="operator kalkulator_knapper">+</button>
          </div>
         </div>
 

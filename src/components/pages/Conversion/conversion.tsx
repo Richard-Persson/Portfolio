@@ -12,8 +12,6 @@ export  function Conversion(){
     return(<>
   
   <HeaderFP/>
-
- 
     <Header/> 
     <Input/>
     
