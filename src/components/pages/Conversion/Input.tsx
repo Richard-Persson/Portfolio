@@ -20,6 +20,7 @@ function Input() {
 //API client
   const client = new currencyapi(process.env.REACT_APP_API_KEY )
 
+ //Converting Currency
   const calculate = ()=>{
       setBefore(amount)
     client.latest({
