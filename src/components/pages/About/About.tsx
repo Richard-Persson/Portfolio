@@ -14,13 +14,15 @@ const date = new Date();
 
 return(<>
 
+<div className="aboutBody">
+    <Header/>
 
-<Header/>
 
+    <h1 className="title"> About me </h1>
 
-<h1 className="title"> About me </h1>
-<p className="text">{år} year old student, studying computer engineering at høgskulen på vestlandet. </p>
-
+    <p className="text">{år} year old student, studying computer engineering at høgskulen på vestlandet.
+         <br/>Currently specializing in machine learning and generative AI. </p>
+</div>
 
 </>)
 
