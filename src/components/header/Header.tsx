@@ -20,10 +20,13 @@ return( <>
     
     <div className="text">
         <Link to="/Portfolio/" className='link'>
-            <p>Home</p>
+            <h3>Home</h3>
         </Link>
         <Link to="/Portfolio/About" className='link'>
-            <p>About</p>
+            <h3>About</h3>
+        </Link>
+        <Link to="/Portfolio/Contact" className='link'>
+            <h3>Contact</h3>
         </Link>
     </div>
 

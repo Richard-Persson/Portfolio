@@ -9,7 +9,7 @@ import {Conversion} from "./components/pages/Conversion/conversion.tsx"
 import { Calculator } from './components/pages/Calculator/Calculator.tsx'
 import { About } from './components/pages/About/About.tsx'
 import  { Shapes }  from './components/pages/Shapes/Shapes.tsx'
-
+import { Contact } from './components/pages/Contact/contact.tsx'
 const router = createBrowserRouter([
 
   {
@@ -38,6 +38,10 @@ const router = createBrowserRouter([
       { 
         path:"/Portfolio/About",
         element:<About/>
+      },
+      { 
+        path:"/Portfolio/Contact",
+        element:<Contact/>
       },
       { 
         path:"/Portfolio/Shapes",
