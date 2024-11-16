@@ -1,4 +1,3 @@
-import React from 'react'
 import "./TerrainGenerator.css"
 import Header from "../../header/Header";
 
