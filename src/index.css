@@ -6,7 +6,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background: linear-gradient(rgb(60, 59, 59),grey,white); 
+  background: linear-gradient(to bottom, #000000, #1a1a1a, #333333);
   background-size: 300% 300%;
   animation: gradientAnimation 10s ease infinite; 
   overflow-x: hidden; 

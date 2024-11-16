@@ -1,0 +1,27 @@
+
+
+.ContactBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    
+}
+
+.submitButton{
+
+    padding: 15px 80px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color:darkslateblue;
+    color: white;
+    font-size: 20px;
+    border: 2px solid black;
+    margin: 10px;
+}
+
+.ContactLabel{
+
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}

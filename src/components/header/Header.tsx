@@ -25,9 +25,6 @@ return( <>
         <Link to="/Portfolio/About" className='link'>
             <h3>About</h3>
         </Link>
-        <Link to="/Portfolio/Contact" className='link'>
-            <h3>Contact</h3>
-        </Link>
     </div>
 
 </div>
