@@ -14,7 +14,7 @@ export function TerrainGenerator(){
       <div className='tg_container'>
 
         <div className='tg_image'> 
-          <img src='public/terrain_generator.png'/>
+          <img src='terrain_generator.png'/>
           
           <p> Current picture of terrain generator</p>
         </div> 
