@@ -28,7 +28,7 @@ export  function Home() {
       <h2 className='Homepage__Text'>Projects</h2>
       <div className="cards">
         <Link className='link' to="/Portfolio/TicTacToe">
-        <Card name='Tac Toe' img='TicTacToe.png' tools={'-HTML\n-CSS\n-JavaScript'} />
+        <Card name='Tic Tac Toe' img='TicTacToe.png' tools={'-HTML\n-CSS\n-JavaScript'} />
         </Link>
         <Link className='link' to="/Portfolio/Calculator">
         <Card name='Calculator' img='Calculator.png' tools={'-HTML\n-CSS\n-JavaScript + React'}/>

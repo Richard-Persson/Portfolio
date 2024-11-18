@@ -29,3 +29,10 @@ border-radius: 10px;
 
   font-size: 25px;
 }
+
+.tg_description p li{
+
+
+  font-size: 25px;
+  list-style: none;
+}

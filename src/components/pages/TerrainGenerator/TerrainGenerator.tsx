@@ -22,7 +22,19 @@ export function TerrainGenerator(){
 
 
         <div className='tg_description'> 
-          <p> Currently working on an terrain generator in threeJS, <br/>will upate this page when the project is finished
+          <p> Currently working on an terrain generator in threeJS, <br/>
+              will upate this page when the project is finished <br/>
+            <br/>
+              Techniques currently being implemented 
+            <ul>
+              <li> Level Of Detail (LOD)</li>
+              <li> Collision detection  </li>
+              <li> Height Map</li>
+              <li> Camera movement</li>
+              <li> Texture splatting</li>
+             </ul>
+
+                           
           </p>
         </div> 
 
