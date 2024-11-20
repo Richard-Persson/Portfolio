@@ -8,7 +8,7 @@ import {TicTacToe} from "./components/pages/TicTacToe/TicTacToe.tsx"
 import {Conversion} from "./components/pages/Conversion/conversion.tsx"
 import { Calculator } from './components/pages/Calculator/Calculator.tsx'
 import { About } from './components/pages/About/About.tsx'
-import  { TerrainGenerator }  from './components/pages/TerrainGenerator/TerrainGenerator.tsx'
+import  {ThreeJSGame }  from './components/pages/ThreeJSGame/ThreeJSGame.tsx'
 const router = createBrowserRouter([
 
   {
@@ -39,8 +39,8 @@ const router = createBrowserRouter([
         element:<About/>
       },
       { 
-        path:"/Portfolio/TerrainGenerator",
-        element:<TerrainGenerator/>
+        path:"/Portfolio/ThreeJSGame",
+        element:<ThreeJSGame/>
       },
     ]
   }

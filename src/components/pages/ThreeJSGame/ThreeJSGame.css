@@ -21,6 +21,7 @@ grid-template-columns: repeat(2,1fr);
 border-radius: 10px;
   height: 100%;
   width: 100%;
+  border:black solid 3px;
 }
 
 

@@ -1,10 +1,10 @@
-import "./TerrainGenerator.css"
+import "./ThreeJSGame.css"
 import Header from "../../header/Header";
 
 
 
 
-export function TerrainGenerator(){
+export function ThreeJSGame(){
 
 
   return (
@@ -14,15 +14,15 @@ export function TerrainGenerator(){
       <div className='tg_container'>
 
         <div className='tg_image'> 
-          <img src='terrain_generator.png'/>
+          <img src='game.png'/>
           
-          <p> Current picture of terrain generator</p>
+          <p> Current state of the game</p>
         </div> 
 
 
 
         <div className='tg_description'> 
-          <p> Currently working on an terrain generator in threeJS, <br/>
+          <p> Currently working on a game in threeJS, <br/>
               will upate this page when the project is finished <br/>
             <br/>
               Techniques currently being implemented 
@@ -30,7 +30,7 @@ export function TerrainGenerator(){
               <li> Level Of Detail (LOD)</li>
               <li> Collision detection  </li>
               <li> Height Map</li>
-              <li> Camera movement</li>
+              <li> Third person camera movement</li>
               <li> Texture splatting</li>
              </ul>
 

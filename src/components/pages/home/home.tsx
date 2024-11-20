@@ -31,17 +31,17 @@ export  function Home() {
         <Card name='Tic Tac Toe' img='TicTacToe.png' tools={'-HTML\n-CSS\n-JavaScript'} />
         </Link>
         <Link className='link' to="/Portfolio/Calculator">
-        <Card name='Calculator' img='Calculator.png' tools={'-HTML\n-CSS\n-JavaScript + React'}/>
+        <Card name='Calculator' img='calculator2.jpg' tools={'-HTML\n-CSS\n-JavaScript + React'}/>
         </Link >
         <Link className='link' to="/Portfolio/Conversion">
-        <Card name='Conversion' img='Conversion.png'tools={'-HTML\n-CSS\n-JavaScript\n-Currency API'}/>
+        <Card name='Conversion' img='conversion2.jpg'tools={'-HTML\n-CSS\n-JavaScript\n-Currency API'}/>
         </Link>
         {
         // <Card name='SolarSystem' img='SolarSystem.png' tools={'-C#\n-WPF'}/> 
         //<Card name='Yatzy' img='Yatzy.png'tools={'-Java\n-SpringBoot MVC\n-JavaScript\n-JSTL\n-SQL\n'}/> 
         } 
-        <Link className='link' to='/Portfolio/TerrainGenerator'>
-        <Card name='Terrain Generator' img='terrain_generator.png'/> 
+        <Link className='link' to='/Portfolio/ThreeJSGame'>
+        <Card name='Game in ThreeJS' img='startscreen.png'/> 
         </Link>
        
       </div>
