@@ -15,7 +15,7 @@ export  function Home() {
 
         <div className="title">
           <h1 className='navn Homepage__Text'>Richard Persson</h1>
-          <p>Student / Aspiring Full-Stack developer</p>
+          <p>Student / Aspiring developer</p>
         </div>
 
         <div className="image">
