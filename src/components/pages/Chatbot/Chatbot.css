@@ -1,0 +1,41 @@
+
+#root{
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    overflow: none;
+  color: white;
+}
+
+.chatbot_container{
+margin: 10px;
+display: grid;
+grid-template-columns: repeat(2,1fr);
+
+}
+
+.chatbot_image img{
+
+border-radius: 10px;
+  height: 90%;
+  width: 80%;
+  border:black solid 3px;
+}
+
+
+.chatbot_description p{
+
+  font-size: 25px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 100%; 
+  text-align: center; 
+
+}
+
+.chatbot_seperator{
+ margin: 200px;
+
+
+}

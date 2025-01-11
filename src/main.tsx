@@ -9,6 +9,7 @@ import {Conversion} from "./components/pages/Conversion/conversion.tsx"
 import { Calculator } from './components/pages/Calculator/Calculator.tsx'
 import { About } from './components/pages/About/About.tsx'
 import  {ThreeJSGame }  from './components/pages/ThreeJSGame/ThreeJSGame.tsx'
+import {Chatbot} from './components/pages/Chatbot/Chatbot.tsx'
 const router = createBrowserRouter([
 
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       { 
         path:"/Portfolio/ThreeJSGame",
         element:<ThreeJSGame/>
+      },
+      { 
+        path:"/Portfolio/Chatbot",
+        element:<Chatbot/>
       },
     ]
   }
