@@ -1,0 +1,11 @@
+Model Information:
+* title:	Lego figure
+* source:	https://sketchfab.com/3d-models/lego-figure-1d7e68b133c64d08811af3c8bb1193a1
+* author:	Dirk.z (https://sketchfab.com/138983)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Lego figure" (https://sketchfab.com/3d-models/lego-figure-1d7e68b133c64d08811af3c8bb1193a1) by Dirk.z (https://sketchfab.com/138983) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
