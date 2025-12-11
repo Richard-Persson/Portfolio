@@ -2,8 +2,6 @@ import { useRef } from 'react'
 import { useFrame,extend } from '@react-three/fiber'
 import * as THREE from "three"
 import { Font, FontLoader, TextGeometry } from 'three/examples/jsm/Addons.js'
-import titillium from "../../TitilliumWeb-Black.ttf"
-import { Text } from '@react-three/drei'
 
 extend({TextGeometry})
 
@@ -43,19 +41,6 @@ export default function About ({ clicked }) {
                 position={[9,-0,0]}
             >
 
-            <Text 
-                 font={titillium}
-                rotateY={90}
-                position={[-9,1,-8 ]}
-                fontSize={0.4}
-                >
-                Richard Persson {"\n"}
-                mail: ricpersson00@gmail.com{"\n"}
-                phone: +47 47658338 {"\n"}
-                linkedIn: Richard Persson
-
-                <meshBasicMaterial color={"white"}/>
-            </Text>
                 <boxGeometry  attach={"geometry"} args={[DEPTH,HEIGHT,LENGTH]}/>
                 <meshLambertMaterial attach={"material"} color={"green"}/>
             </mesh>

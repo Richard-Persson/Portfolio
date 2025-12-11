@@ -2,8 +2,6 @@
 import './App.css'
 import { Canvas, useLoader, useFrame } from '@react-three/fiber'
 import { FirstPersonControls} from '@react-three/drei'
-import * as THREE from "three"
-import { Cube } from './components/Cube'
 import { useState, useRef } from 'react'
 import { Plane } from './components/Plane'
 import { Wall } from './components/Wall'
@@ -12,9 +10,10 @@ import Cone from './components/Cone'
 import About from './pages/About'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
+import Cylinder from './components/Cone'
 export default function App() {
 
-    const [clickedCone,setClickedCone]=useState(true)
+    const [clickedCone,setClickedCone]=useState(false)
     const [clickedAbout,setClickedAbout ]=useState(false)
     const [clickedProjects,setClickedProjects ]=useState(false)
     const [clickedContact,setClickedContact ]=useState(false)
@@ -77,19 +76,18 @@ export default function App() {
                 <h1>Richard Persson</h1>
             </header>
 
+
             <main>
                 <div id="canvas-container">
 
-                    <Canvas  camera={ {position: [0,0,4], fov:75}}>
+                    <Canvas  camera={ {position: [0,0,-5], fov:75, rotation: [0,0,0]}}>
 
-                        <FirstPersonControls mouseDragOn={false} movementSpeed={5}/>
                         <spotLight intensity={[1,2,3]} position={[0,0,0]}/>
                         <ambientLight intensity={0.9} />
                         <directionalLight color="red" position={[0, 0, 0]} />
                         <Model />
 
-                        <Cube position = {[4,0,0]} size = {[1,1,1]}/>
-                        <Cube position = {[-4,0,0]} size = {[1,1,1]}/>
+
 
                         {/* Scenen */}
                         <Wall x={10} y={0} rotation={true}/>
@@ -101,7 +99,7 @@ export default function App() {
 
                         {/* Sider */}
 
-                        <Cone     clicked={clickedCone}/>
+                        <Cylinder     clicked={clickedCone}/>
                         <Projects clicked={clickedProjects}/>
                         <About    clicked={clickedAbout}/>
                         <Contact  clicked={clickedContact}/>

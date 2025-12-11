@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@react-three/drei": "^10.7.6",
-    "@react-three/fiber": "^9.4.0",
+    "@react-three/fiber": "^9.4.2",
     "@react-three/rapier": "^2.2.0",
     "ecctrl": "^1.0.97",
     "react": "^19.1.1",
@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
-    "@types/react": "^19.1.16",
+    "@types/react": "^19.2.7",
     "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^5.0.4",
     "eslint": "^9.36.0",

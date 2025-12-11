@@ -1,8 +1,8 @@
-import { useState, useRef } from 'react'
+import { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from "three"
 
-export default function Cone ({ clicked }) {
+export default function Cylinder ({clicked}) {
 
     const markerRef = useRef()
     const vec = new THREE.Vector3()
@@ -23,15 +23,17 @@ export default function Cone ({ clicked }) {
         return null;
     })
     
+    const HEIGHT = 20
+    const WIDTH = 1
+    const LENGTH = 1
+
+    
 
     return(
         <> 
-            <mesh
-                ref={markerRef}
-                
-            >
+            <mesh ref={markerRef} >
 
-                <coneGeometry attach={"geometry"} args={[1,5,20]}/>
+                <cylinderGeometry attach={"geometry"} args={[WIDTH,LENGTH,HEIGHT]}/>
                 <meshLambertMaterial attach={"material"} color={"red"}/>
             </mesh>
 
