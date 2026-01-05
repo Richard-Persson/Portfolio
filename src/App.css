@@ -35,4 +35,14 @@ nav li:hover {
   margin: 2rem auto;
   border: 2px solid #444;
 }
+main {
+          width: "100vw";
+          height: "200vw";
+          position: "absolute";
+          z-index: 99;
+          text-align: "center";
+          pointer-events: "none";
+          font-size: "5vh";
+          color: "white";
+}
 

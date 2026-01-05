@@ -38,6 +38,7 @@ export default function Projects ({ clicked }) {
             <mesh
                 ref={projectRef}
                 position={[-9,-0,0]}
+                onClick={console.log("Hello")}  
             >
 
                 <boxGeometry  attach={"geometry"} args={[DEPTH,HEIGHT,LENGTH]}/>
