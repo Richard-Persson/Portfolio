@@ -1,48 +1,44 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #111;
-  color: #fff;
-  text-align: center;
+.desktop {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #53a7ff 0%, #6cb5ff 30%, #8fc8ff 55%, #a8d8ff 70%, #b3e0ff 80%, #7ec850 85%, #5fb032 90%, #4d8f27 95%, #3d7a1e 100%);
+  user-select: none;
 }
 
-nav {
-  padding: 1rem;
-  font-size: 36px;
-
+.xp-window {
+  position: absolute;
+  min-width: 320px;
+  min-height: 100px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  cursor: default;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-evenly;
-  gap: 2rem;
-  padding: 0;
-  margin: 0;
+.xp-window .window-body {
+  overflow-y: auto;
+  max-height: calc(100vh - 160px);
 }
 
-nav li {
-  cursor: pointer;
-  transition: color 0.3s;
+.window-content {
+  padding: 12px;
+  text-align: left;
+  color: #222;
 }
 
-nav li:hover {
-  color: #00ffff;
+.window-status-minimized {
+  display: none;
 }
 
-#canvas-container {
-  height: 60vh;
-  margin: 2rem auto;
-  border: 2px solid #444;
-}
-main {
-          width: "100vw";
-          height: "200vw";
-          position: "absolute";
-          z-index: 99;
-          text-align: "center";
-          pointer-events: "none";
-          font-size: "5vh";
-          color: "white";
+.window-body::-webkit-scrollbar {
+  width: 14px;
 }
 
+.window-body::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.window-body::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border: 1px solid #a0a0a0;
+}

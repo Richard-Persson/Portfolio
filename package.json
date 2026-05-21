@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@react-three/drei": "^10.7.6",
     "@react-three/fiber": "^9.4.2",
     "@react-three/rapier": "^2.2.0",
+    "clippyjs": "^0.1.0",
     "ecctrl": "^1.0.97",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",

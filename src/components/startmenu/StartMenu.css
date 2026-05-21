@@ -1,0 +1,142 @@
+.start-menu-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+}
+
+.start-menu-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+}
+
+.start-menu {
+  position: fixed;
+  bottom: 36px;
+  left: 0;
+  z-index: 9999;
+  width: 360px;
+  background: #fff;
+  border: 2px solid #1a4db3;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.start-menu-header {
+  background: linear-gradient(180deg, #1a4db3 0%, #2664cc 5%, #2d70d4 40%, #2560c4 95%, #1a4db3 100%);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.start-menu-header .user-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 4px;
+  border: 2px solid #6dc4ff;
+}
+
+.start-menu-header .user-name {
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.start-menu-body {
+  display: flex;
+  min-height: 260px;
+}
+
+.start-menu-left {
+  flex: 1;
+  padding: 6px;
+  background: #fff;
+  border-right: 1px solid #d4d0c8;
+}
+
+.start-menu-right {
+  width: 130px;
+  padding: 6px;
+  background: #d4d0c8;
+}
+
+.start-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 12px;
+  color: #222;
+  font-family: Tahoma, sans-serif;
+}
+
+.start-menu-item:hover {
+  background: #3168d6;
+  color: #fff;
+}
+
+.start-menu-item .item-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.start-menu-item .item-text {
+  font-size: 12px;
+}
+
+.start-menu-item .item-desc {
+  font-size: 10px;
+  color: #888;
+}
+
+.start-menu-item:hover .item-desc {
+  color: #ccc;
+}
+
+.start-menu-divider {
+  height: 1px;
+  background: #d4d0c8;
+  margin: 4px 8px;
+}
+
+.start-menu-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 4px 6px;
+  background: linear-gradient(180deg, #4f8edd 0%, #3678d0 3%, #2b6bc4 50%, #215cb8 97%, #1a4db3 100%);
+  border-top: 1px solid #1a4db3;
+}
+
+.start-menu-footer button {
+  padding: 4px 12px;
+  background: linear-gradient(180deg, #4f8edd 0%, #3678d0 3%, #2b6bc4 50%, #215cb8 97%, #1a4db3 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  color: #fff;
+  font-size: 11px;
+  font-family: Tahoma, sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.start-menu-footer button:hover {
+  background: linear-gradient(180deg, #6eaaff 0%, #4f8edd 3%, #3678d0 50%, #2b6bc4 97%, #215cb8 100%);
+}
+
+.start-menu-footer button .footer-icon {
+  font-size: 14px;
+}
