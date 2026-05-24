@@ -1,45 +1,27 @@
 import { useState, useEffect, useRef, useMemo } from 'react'
 import './radio.css'
 
-const PROXY_API = '/radio-api'
-
-const PRESET_STATIONS = [
-  { id: 'yamxtCoy', title: 'Cologne', country: 'Germany' },
-  { id: '6lcXHtKK', title: 'Berlin', country: 'Germany' },
-  { id: '8uotztrv', title: 'Munich', country: 'Germany' },
-  { id: 'iATDp23j', title: 'Düsseldorf', country: 'Germany' },
-  { id: '0eZoYyEW', title: 'London', country: 'United Kingdom' },
-  { id: 'B7DS4V1m', title: 'Paris', country: 'France' },
-  { id: 'eR8K4rBb', title: 'Tokyo', country: 'Japan' },
-  { id: '9Yi25umJ', title: 'New York', country: 'United States' },
-  { id: 'uNB8u2o7', title: 'Sydney', country: 'Australia' },
-  { id: 'BMplqTGe', title: 'São Paulo', country: 'Brazil' },
-]
-
-async function apiFetch(path) {
-  const url = `${PROXY_API}${path}`
-  const res = await fetch(url)
-  if (!res.ok) throw new Error(`API error: ${res.status}`)
-  return res.json()
-}
+const API_BASE = 'https://de1.api.radio-browser.info'
 
 export default function RadioContent({ volume }) {
   const [search, setSearch] = useState('')
-  const [places, setPlaces] = useState([])
-  const [channels, setChannels] = useState([])
-  const [selectedPlace, setSelectedPlace] = useState(null)
-  const [view, setView] = useState('places')
+  const [countries, setCountries] = useState([])
+  const [stations, setStations] = useState([])
+  const [selectedCountry, setSelectedCountry] = useState(null)
+  const [view, setView] = useState('countries')
   const [playingTitle, setPlayingTitle] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const audioRef = useRef(null)
 
   useEffect(() => {
-    apiFetch('/places')
-      .then(d => setPlaces(d.data.list))
-      .catch(() => {
-        setPlaces(PRESET_STATIONS)
+    fetch(`${API_BASE}/json/countries?order=stationcount&reverse=true&hidebroken=true`)
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+        return res.json()
       })
+      .then(d => setCountries(d))
+      .catch(() => {})
   }, [])
 
   useEffect(() => {
@@ -48,35 +30,26 @@ export default function RadioContent({ volume }) {
     }
   }, [volume])
 
-  const filteredPlaces = useMemo(() => {
-    const list = places.length > 0 ? places : PRESET_STATIONS
-    if (!search) return list.slice(0, 80)
+  const filteredCountries = useMemo(() => {
+    if (!search) return countries.slice(0, 80)
     const q = search.toLowerCase()
-    return list.filter(p =>
-      (p.title && p.title.toLowerCase().includes(q)) ||
-      (p.country && p.country.toLowerCase().includes(q))
+    return countries.filter(c =>
+      c.name.toLowerCase().includes(q)
     ).slice(0, 120)
-  }, [search, places])
+  }, [search, countries])
 
-  const openPlace = async (place) => {
-    const placeId = place.id || place
-    setSelectedPlace(place)
+  const openCountry = async (country) => {
+    setSelectedCountry(country)
     setLoading(true)
     setError(null)
     try {
-      const data = await apiFetch(`/page/${placeId}`)
-      const allChannels = []
-      data.data.content.forEach(section => {
-        if (section.type === 'list' && section.itemsType === 'channel') {
-          section.items.forEach(item => {
-            if (item.page?.type === 'channel') {
-              allChannels.push(item.page)
-            }
-          })
-        }
-      })
-      setChannels(allChannels)
-      setView('channels')
+      const res = await fetch(
+        `${API_BASE}/json/stations/bycountrycodeexact/${country.iso_3166_1}?order=clickcount&reverse=true&limit=100&hidebroken=true`
+      )
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      const data = await res.json()
+      setStations(data)
+      setView('stations')
     } catch (e) {
       setError(e.message)
     } finally {
@@ -84,88 +57,78 @@ export default function RadioContent({ volume }) {
     }
   }
 
-  const togglePlay = (channel) => {
+  const togglePlay = (station) => {
     if (!audioRef.current) return
-    const id = channel.url.split('/').pop()
-    if (audioRef.current.dataset.channelId === id && !audioRef.current.paused) {
+    const id = station.stationuuid
+    if (audioRef.current.dataset.stationId === id && !audioRef.current.paused) {
       audioRef.current.pause()
       setPlayingTitle('')
     } else {
-      const listenUrl = `https://radio.garden/api/ara/content/listen/${id}/channel.mp3`
-      audioRef.current.src = listenUrl
-      audioRef.current.dataset.channelId = id
+      audioRef.current.src = station.url_resolved || station.url
+      audioRef.current.dataset.stationId = id
       audioRef.current.play().catch(() => {})
-      setPlayingTitle(channel.title)
+      setPlayingTitle(station.name)
     }
   }
-
-  const currentPlace = selectedPlace
-    ? (selectedPlace.title || selectedPlace)
-    : ''
 
   return (
     <>
       <audio ref={audioRef} />
 
-      {view === 'places' && (
+      {view === 'countries' && (
         <>
           <div className="radio-search">
             <input
               type="text"
-              placeholder="Search cities..."
+              placeholder="Search countries..."
               value={search}
               onChange={e => setSearch(e.target.value)}
             />
           </div>
           <div className="radio-list">
-            {filteredPlaces.map(p => {
-              const placeId = p.id
-              return (
-                <div
-                  key={placeId}
-                  className="radio-item"
-                  onClick={() => openPlace(p)}
-                >
-                  <span className="radio-item-title">{p.title}</span>
-                  <span className="radio-item-country">{p.country}</span>
-                  <span className="radio-arrow">→</span>
-                </div>
-              )
-            })}
+            {filteredCountries.map(c => (
+              <div
+                key={c.iso_3166_1}
+                className="radio-item"
+                onClick={() => openCountry(c)}
+              >
+                <span className="radio-item-title">{c.name}</span>
+                <span className="radio-item-country">{c.stationcount} stations</span>
+                <span className="radio-arrow">→</span>
+              </div>
+            ))}
           </div>
         </>
       )}
 
-      {view === 'channels' && (
+      {view === 'stations' && (
         <>
           <div
             className="radio-back"
-            onClick={() => { setView('places'); setError(null) }}
+            onClick={() => { setView('countries'); setError(null) }}
           >
-            ← {currentPlace}
+            ← {selectedCountry?.name || ''}
           </div>
           <div className="radio-list">
             {loading && <div className="radio-loading">Loading stations...</div>}
             {error && <div className="radio-error">{error}</div>}
-            {!loading && !error && channels.length === 0 && (
+            {!loading && !error && stations.length === 0 && (
               <div className="radio-error">No stations found</div>
             )}
-            {channels.map(ch => {
-              const id = ch.url.split('/').pop()
-              const isPlaying = audioRef.current?.dataset.channelId === id && !audioRef.current?.paused
+            {stations.map(s => {
+              const isPlaying = audioRef.current?.dataset.stationId === s.stationuuid && !audioRef.current?.paused
+              const sub = [s.codec, s.bitrate > 0 ? `${s.bitrate}k` : ''].filter(Boolean).join(' ')
               return (
                 <div
-                  key={id}
+                  key={s.stationuuid}
                   className={`radio-item ${isPlaying ? 'playing' : ''}`}
-                  onClick={() => togglePlay(ch)}
+                  onClick={() => togglePlay(s)}
                 >
                   <span className="radio-play-icon">
                     {isPlaying ? '⏹' : '▶️'}
                   </span>
-                  <span className="radio-item-title">{ch.title}</span>
-                  <span className="radio-item-country">
-                    {ch.place?.title || ch.subtitle || ''}
-                  </span>
+                  <span className="radio-item-title">{s.name}</span>
+                  {sub && <span className="radio-item-country">{sub}</span>}
                 </div>
               )
             })}
