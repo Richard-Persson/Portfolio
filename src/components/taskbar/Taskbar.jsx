@@ -25,12 +25,7 @@ export default function Taskbar({ windows, activeWindow, onStartClick, onWindowC
   return (
     <div className="taskbar">
       <button className="start-button" onClick={onStartClick}>
-        <svg className="start-logo" viewBox="0 0 18 18">
-          <rect x="0" y="0" width="8" height="8" fill="#fecc00" rx="1" />
-          <rect x="10" y="0" width="8" height="8" fill="#fecc00" rx="1" />
-          <rect x="0" y="10" width="8" height="8" fill="#fecc00" rx="1" />
-          <rect x="10" y="10" width="8" height="8" fill="#fecc00" rx="1" />
-        </svg>
+        <img className='start-logo' src='windows-xp.png' />
         <span>start</span>
       </button>
 
