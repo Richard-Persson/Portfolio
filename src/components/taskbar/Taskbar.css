@@ -215,6 +215,31 @@
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
 }
 
+@media (max-width: 480px) {
+  .start-button span {
+    display: none;
+  }
+
+  .taskbar-btn {
+    max-width: 40px;
+    padding: 0 6px;
+    justify-content: center;
+  }
+
+  .taskbar-btn .window-icon {
+    margin: 0;
+  }
+
+  .taskbar-tray {
+    padding: 0 4px;
+    gap: 2px;
+  }
+
+  .tray-clock {
+    font-size: 10px;
+  }
+}
+
 .window-icon {
   width: 14px;
   height: 14px;

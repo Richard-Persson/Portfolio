@@ -9,28 +9,39 @@ export function useWindowDrag(windows, setWindows, focusWindow) {
   windowsRef.current = windows
   focusRef.current = focusWindow
 
+  const getPos = useCallback((e) => ({
+    x: e.touches ? e.touches[0].clientX : e.clientX,
+    y: e.touches ? e.touches[0].clientY : e.clientY,
+  }), [])
+
   const handleMouseDown = useCallback((e, name) => {
     focusRef.current(name)
-    if (e.button !== 0) return
+    if (!e.touches && e.button !== 0) return
     if (!e.target.closest('.title-bar')) return
     if (e.target.closest('.title-bar-controls')) return
     const win = windowsRef.current[name]
     if (!win) return
+    const pos = getPos(e)
     setDragging(name)
     dragOffset.current = {
-      x: e.clientX - win.x,
-      y: e.clientY - win.y,
+      x: pos.x - win.x,
+      y: pos.y - win.y,
     }
-  }, [])
+  }, [getPos])
 
   useEffect(() => {
     if (!dragging) return
 
-    const handleMouseMove = (e) => {
-      if (e.buttons === 0) {
+    const handleMove = (e) => {
+      if (e.touches && e.touches.length === 0) {
         setDragging(null)
         return
       }
+      if (!e.touches && e.buttons === 0) {
+        setDragging(null)
+        return
+      }
+      const pos = getPos(e)
       const { x, y } = dragOffset.current
       setWindows(prev => {
         const win = prev[dragging]
@@ -39,22 +50,26 @@ export function useWindowDrag(windows, setWindows, focusWindow) {
           ...prev,
           [dragging]: {
             ...win,
-            x: e.clientX - x,
-            y: e.clientY - y,
+            x: pos.x - x,
+            y: pos.y - y,
           }
         }
       })
     }
 
-    const handleMouseUp = () => setDragging(null)
+    const handleEnd = () => setDragging(null)
 
-    window.addEventListener('mousemove', handleMouseMove)
-    window.addEventListener('mouseup', handleMouseUp)
+    window.addEventListener('mousemove', handleMove)
+    window.addEventListener('mouseup', handleEnd)
+    window.addEventListener('touchmove', handleMove, { passive: false })
+    window.addEventListener('touchend', handleEnd)
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove)
-      window.removeEventListener('mouseup', handleMouseUp)
+      window.removeEventListener('mousemove', handleMove)
+      window.removeEventListener('mouseup', handleEnd)
+      window.removeEventListener('touchmove', handleMove)
+      window.removeEventListener('touchend', handleEnd)
     }
-  }, [dragging, setWindows])
+  }, [dragging, setWindows, getPos])
 
   return { dragging, handleMouseDown }
 }

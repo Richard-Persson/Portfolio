@@ -42,3 +42,26 @@
   background: #c0c0c0;
   border: 1px solid #a0a0a0;
 }
+
+@media (max-width: 768px) {
+  .desktop {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .xp-window {
+    position: relative !important;
+    left: 8px !important;
+    top: auto !important;
+    width: calc(100vw - 16px) !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: auto !important;
+    margin-bottom: 8px;
+  }
+
+  .xp-window .window-body {
+    max-height: none !important;
+  }
+}

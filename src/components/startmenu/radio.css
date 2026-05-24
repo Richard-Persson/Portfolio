@@ -124,3 +124,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@media (max-width: 768px) {
+  .radio-list {
+    height: 160px;
+  }
+}

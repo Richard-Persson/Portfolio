@@ -19,3 +19,15 @@ body {
   width: 100vw;
   overflow: hidden;
 }
+
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto;
+    height: auto;
+  }
+
+  #root {
+    overflow-y: auto;
+    height: auto;
+  }
+}

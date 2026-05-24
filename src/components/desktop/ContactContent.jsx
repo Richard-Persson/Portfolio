@@ -35,12 +35,12 @@ export default function ContactContent() {
       <div className="contact-form" style={{ marginTop: 12 }}>
         <form ref={form} onSubmit={sendEmail}>
           <div className="field-row" style={{ marginBottom: 6 }}>
-            <label htmlFor="name" style={{ width: 60 }}>Name:</label>
-            <input id="name" type="text" name="user_name" style={{ flex: 1 }} required />
+            <label htmlFor="name" style={{ width: 60, flexShrink: 0 }}>Name:</label>
+            <input id="name" type="text" name="user_name" style={{ flex: 1, minWidth: 0 }} required />
           </div>
           <div className="field-row" style={{ marginBottom: 6 }}>
-            <label htmlFor="email" style={{ width: 60 }}>Email:</label>
-            <input id="email" type="email" name="user_email" style={{ flex: 1 }} required />
+            <label htmlFor="email" style={{ width: 60, flexShrink: 0 }}>Email:</label>
+            <input id="email" type="email" name="user_email" style={{ flex: 1, minWidth: 0 }} required />
           </div>
           <div className="field-row-stacked" style={{ marginBottom: 8 }}>
             <label htmlFor="msg">Message:</label>

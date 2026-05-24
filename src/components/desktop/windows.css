@@ -80,3 +80,13 @@
 .window-content a:visited {
   color: #609;
 }
+
+@media (max-width: 768px) {
+  .window-content {
+    padding: 8px;
+  }
+
+  .window-content h2 {
+    font-size: 16px;
+  }
+}

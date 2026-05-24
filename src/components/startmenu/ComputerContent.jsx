@@ -15,8 +15,8 @@ const SPECS = [
 
 export default function ComputerContent() {
   return (
-    <div style={{ display: 'flex', gap: 12 }}>
-      <div style={{ flex: 1, minWidth: 0 }}>
+    <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+      <div style={{ flex: '1 1 200px', minWidth: 0 }}>
         <p style={{ fontSize: 13, fontWeight: 'bold', color: '#1a3a6e', margin: '0 0 8px' }}>
           System Properties
         </p>
@@ -31,14 +31,12 @@ export default function ComputerContent() {
           </tbody>
         </table>
       </div>
-      <div style={{ flexShrink: 0, width: 180 }}>
+      <div style={{ flexShrink: 0, width: 180, maxWidth: '100%' }}>
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Dell_Desktop_Computer_in_school_classroom.jpg"
           alt="Old Dell PC running Windows XP"
           style={{ width: '100%', border: '1px solid #d4d0c8', background: '#fff' }}
         />
-        <p style={{ fontSize: 9, color: '#999', textAlign: 'center', margin: '2px 0 0' }}>
-        </p>
       </div>
     </div>
   )

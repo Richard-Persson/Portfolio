@@ -98,7 +98,7 @@ export default function PongContent() {
     <>
       <h2>Pong</h2>
       <p style={{ marginBottom: 8 }}>W/S or Arrow keys to move.</p>
-      <canvas ref={canvasRef} width={600} height={400} style={{ border: '2px solid #000', display: 'block', margin: '0 auto' }} />
+      <canvas ref={canvasRef} width={600} height={400} style={{ border: '2px solid #000', display: 'block', margin: '0 auto', maxWidth: '100%', height: 'auto' }} />
     </>
   )
 }
