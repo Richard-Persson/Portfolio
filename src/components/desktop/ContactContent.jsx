@@ -3,29 +3,42 @@ import emailjs from '@emailjs/browser'
 import './windows.css'
 import { Button } from 'react-windows-xp'
 
+
 export default function ContactContent() {
   const form = useRef()
   const [status, setStatus] = useState('idle')
   const [error, setError] = useState('')
+
+  const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+  const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+  const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
   const sendEmail = (e) => {
     e.preventDefault()
     setStatus('sending')
     setError('')
 
-    emailjs.sendForm(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      form.current,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    const formData = new FormData(form.current)
+
+    emailjs.send(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID,
+      {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        title: formData.get('title'),
+        message: formData.get('message'),
+      },
+      EMAILJS_PUBLIC_KEY
     )
       .then(() => {
         setStatus('success')
         form.current.reset()
       })
-      .catch((err) => {
+      .catch((error) => {
+        console.log(error)
         setStatus('error')
-        setError(err.text || 'Failed to send. Please try again.')
+        setError('Failed to send. Please try again.')
       })
   }
 
@@ -36,11 +49,15 @@ export default function ContactContent() {
         <form ref={form} onSubmit={sendEmail}>
           <div className="field-row" style={{ marginBottom: 6 }}>
             <label htmlFor="name" style={{ width: 60, flexShrink: 0 }}>Name:</label>
-            <input id="name" type="text" name="user_name" style={{ flex: 1, minWidth: 0 }} required />
+            <input id="name" type="text" name="name" style={{ flex: 1, minWidth: 0 }} required />
           </div>
           <div className="field-row" style={{ marginBottom: 6 }}>
             <label htmlFor="email" style={{ width: 60, flexShrink: 0 }}>Email:</label>
-            <input id="email" type="email" name="user_email" style={{ flex: 1, minWidth: 0 }} required />
+            <input id="email" type="email" name="email" style={{ flex: 1, minWidth: 0 }} required />
+          </div>
+          <div className="field-row" style={{ marginBottom: 6 }}>
+            <label htmlFor="Title" style={{ width: 60, flexShrink: 0 }}>Title:</label>
+            <input id="Title" type="text" name="title" style={{ flex: 1, minWidth: 0 }} required />
           </div>
           <div className="field-row-stacked" style={{ marginBottom: 8 }}>
             <label htmlFor="msg">Message:</label>
@@ -49,7 +66,7 @@ export default function ContactContent() {
 
           {status === 'success' && (
             <p style={{ color: '#3c3', fontSize: 12, marginBottom: 6 }}>
-              Message sent! I&apos;ll get back to you soon.
+              Message sent!
             </p>
           )}
           {status === 'error' && (
