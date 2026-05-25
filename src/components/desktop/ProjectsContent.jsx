@@ -16,7 +16,6 @@ export default function ProjectsContent() {
         {projects.map((p, i) => (
           <div key={i} className="project-item">
             <h3>{p.name}</h3>
-            <p>{p.desc}</p>
             <p style={{ fontSize: 10, color: '#888', marginTop: 2 }}>{p.tech}</p>
           </div>
         ))}

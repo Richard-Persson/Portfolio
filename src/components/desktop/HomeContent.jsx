@@ -9,9 +9,6 @@ export default function HomeContent() {
       <p>
         You can navigate by clicking the taskbar buttons, the desktop icons, or the Start menu.
       </p>
-      <p>
-        The Radio is 10/10
-      </p>
       <div style={{ marginTop: 16, padding: 8, background: '#ece9d8', border: '1px solid #aca899' }}>
         <p style={{ fontSize: 11, color: '#666', margin: 0 }}>
           Windows XP Professional x64 Edition<br />

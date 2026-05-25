@@ -21,7 +21,8 @@ export default function DesktopIcons({ items, onDoubleClick }) {
           onDoubleClick={() => onDoubleClick(item.key)}
           onClick={() => handleClick(item.key)}
         >
-          <div className="icon-img">{item.icon}</div>
+
+          <img className="icon-img" src={item.icon} />
           <div className="icon-label">{item.label}</div>
         </div>
       ))}

@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react'
 
 const PADDLE_W = 10, PADDLE_H = 80, BALL_S = 10
-const SPEED = 5, AI_SPEED = 4
+const SPEED = 5, AI_SPEED = 5
 
 export default function PongContent() {
   const canvasRef = useRef(null)

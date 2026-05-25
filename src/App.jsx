@@ -18,21 +18,21 @@ import ClippyAssistant from './components/taskbar/ClippyAssistant'
 import { useWindowDrag } from './hooks/useWindowDrag'
 
 const SECTIONS = {
-  home: { title: 'Home', icon: '🏠', desc: 'Welcome page', x: 60, y: 40, width: 500, height: 320 },
-  projects: { title: 'Projects', icon: '📁', desc: 'My work & portfolio', x: 120, y: 100, width: 540, height: 380 },
-  about: { title: 'About Me', icon: '👤', desc: 'Background & skills', x: 640, y: 60, width: 480, height: 340 },
-  contact: { title: 'Contact', icon: '✉️', desc: 'Get in touch', x: 600, y: 300, width: 460, height: 300 },
-  pong: { title: 'Pong', icon: '🏓', desc: '', x: 120, y: 80, width: 640, height: 500 },
-  pinball: { title: 'Pinball', icon: '🕹️', desc: 'Space Cadet Pinball', x: 300, y: 120, width: 720, height: 620 },
-  music: { title: 'Radio', icon: '🎵', desc: 'Radio player', x: 200, y: 80, width: 400, height: 360 },
-  pictures: { title: 'Pictures', icon: '🖼️', desc: 'Photos', x: 140, y: 60, width: 440, height: 400 },
-  computer: { title: 'Computer', icon: '💻', desc: 'System specs', x: 80, y: 40, width: 520, height: 380 },
+  home: { title: 'Home', icon: '🏠', x: 60, y: 40, width: 500, height: 320 },
+  projects: { title: 'Projects', icon: '📁', x: 120, y: 100, width: 540, height: 380 },
+  about: { title: 'About Me', icon: '👤', x: 640, y: 60, width: 480, height: 340 },
+  contact: { title: 'Contact', icon: '✉️', x: 600, y: 300, width: 460, height: 300 },
+  pong: { title: 'Pong', icon: '🏓', x: 120, y: 80, width: 640, height: 500 },
+  pinball: { title: 'Pinball', icon: '🕹️', x: 300, y: 120, width: 720, height: 620 },
+  music: { title: 'Radio', icon: '🎵', x: 200, y: 80, width: 400, height: 360 },
+  pictures: { title: 'Pictures', icon: '🖼️', x: 140, y: 60, width: 440, height: 400 },
+  computer: { title: 'Computer', icon: '💻', x: 80, y: 40, width: 520, height: 380 },
 }
 
 const desktopIcons = [
-  { key: 'projects', icon: '📁', label: 'Projects' },
-  { key: 'about', icon: '👤', label: 'About Me' },
-  { key: 'contact', icon: '✉️', label: 'Contact' },
+  { key: 'projects', icon: 'folder2.png', label: 'Projects' },
+  { key: 'about', icon: 'person.png', label: 'About Me' },
+  { key: 'contact', icon: 'contacticon.png', label: 'Contact' },
 ]
 
 const WINDOW_CONTENT = {

@@ -1,16 +1,16 @@
 import './StartMenu.css'
 
-export default function StartMenu({ sections, onItemClick, onClose }) {
+export default function StartMenu({ onItemClick, onClose }) {
   const leftItems = [
-    { key: 'home', icon: '🏠', title: 'Home', desc: 'Welcome page' },
-    { key: 'pong', icon: '🏓', title: 'Pong', desc: '' },
-    { key: 'pinball', icon: '🕹️', title: 'Pinball', desc: 'Space Cadet' },
+    { key: 'home', icon: '🏠', title: 'Home' },
+    { key: 'pong', icon: '🏓', title: 'Pong' },
+    { key: 'pinball', icon: '🕹️', title: 'Pinball' },
   ]
 
   const rightItems = [
-    { icon: '🖼️', label: 'Pictures', key: 'pictures' },
-    { icon: '🎵', label: 'Radio', key: 'music' },
-    { icon: '💻', label: 'Computer', key: 'computer' },
+    { icon: 'folder.png', label: 'Pictures', key: 'pictures' },
+    { icon: 'headset.png', label: 'Radio', key: 'music' },
+    { icon: 'computer.png', label: 'Computer', key: 'computer' },
   ]
 
   return (
@@ -25,7 +25,7 @@ export default function StartMenu({ sections, onItemClick, onClose }) {
               display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22,
             }}
           >
-            👤
+            <img src="dog.png" />
           </div>
           <span className="user-name">Richard Persson</span>
         </div>
@@ -39,7 +39,6 @@ export default function StartMenu({ sections, onItemClick, onClose }) {
                   <span className="item-icon">{item.icon}</span>
                   <div>
                     <div className="item-text">{item.title}</div>
-                    <div className="item-desc">{item.desc}</div>
                   </div>
                 </div>
               </div>
@@ -53,7 +52,7 @@ export default function StartMenu({ sections, onItemClick, onClose }) {
                 className="start-menu-item"
                 onClick={() => item.key && onItemClick(item.key)}
               >
-                <span className="item-icon">{item.icon}</span>
+                <img className="item-icon" src={item.icon} />
                 <span className="item-text">{item.label}</span>
               </div>
             ))}
