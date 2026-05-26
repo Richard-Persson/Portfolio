@@ -16,24 +16,8 @@ import PicturesContent from './components/startmenu/PicturesContent'
 import ComputerContent from './components/startmenu/ComputerContent'
 import ClippyAssistant from './components/taskbar/ClippyAssistant'
 import { useWindowDrag } from './hooks/useWindowDrag'
+import { DESKTOPICONS, SECTIONS } from './classes'
 
-const SECTIONS = {
-  home: { title: 'Home', icon: '🏠', x: 60, y: 40, width: 500, height: 320 },
-  projects: { title: 'Projects', icon: '📁', x: 120, y: 100, width: 540, height: 380 },
-  about: { title: 'About Me', icon: '👤', x: 640, y: 60, width: 480, height: 340 },
-  contact: { title: 'Contact', icon: '✉️', x: 600, y: 300, width: 460, height: 300 },
-  pong: { title: 'Pong', icon: '🏓', x: 120, y: 80, width: 640, height: 500 },
-  pinball: { title: 'Pinball', icon: '🕹️', x: 300, y: 120, width: 720, height: 620 },
-  music: { title: 'Radio', icon: '🎵', x: 200, y: 80, width: 400, height: 360 },
-  pictures: { title: 'Pictures', icon: '🖼️', x: 140, y: 60, width: 440, height: 400 },
-  computer: { title: 'Computer', icon: '💻', x: 80, y: 40, width: 520, height: 380 },
-}
-
-const desktopIcons = [
-  { key: 'projects', icon: 'folder2.png', label: 'Projects' },
-  { key: 'about', icon: 'person.png', label: 'About Me' },
-  { key: 'contact', icon: 'contacticon.png', label: 'Contact' },
-]
 
 const WINDOW_CONTENT = {
   home: <HomeContent />,
@@ -47,15 +31,18 @@ const WINDOW_CONTENT = {
   computer: <ComputerContent />,
 }
 
+const WINDOW_X = 400
+const WINDOW_Y = 100
+const WINDOW_WIDTH = 500
+
 function buildInitialWindows() {
   return Object.fromEntries(
-    Object.entries(SECTIONS).map(([key, val]) => [key, {
+    Object.entries(SECTIONS).map(([key]) => [key, {
       open: key === 'home',
       minimized: false,
-      x: val.x,
-      y: val.y,
-      width: val.width,
-      height: val.height,
+      x: WINDOW_X,
+      y: WINDOW_Y,
+      width: WINDOW_WIDTH,
       zIndex: key === 'home' ? 2 : 1,
     }])
   )
@@ -134,7 +121,7 @@ export default function App() {
   return (
     <div className="desktop">
       <Wallpaper fullScreen>
-        <DesktopIcons items={desktopIcons} onDoubleClick={openWindow} />
+        <DesktopIcons items={DESKTOPICONS} onDoubleClick={openWindow} />
 
         {openWindows.map(([name, win]) => (
           <XPWindow
