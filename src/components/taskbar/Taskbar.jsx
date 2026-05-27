@@ -38,7 +38,7 @@ export default function Taskbar({ windows, activeWindow, onStartClick, onWindowC
             className={`taskbar-btn ${name === activeWindow ? 'active' : ''}`}
             onClick={() => onWindowClick(name)}
           >
-            <span className="window-icon">{win.icon}</span>
+            <img className="window-icon" src={win.icon} />
             {win.title}
           </button>
         ))}

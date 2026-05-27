@@ -1,17 +1,11 @@
-export const SECTIONS = {
-  home: { title: 'Home', icon: '🏠' },
-  projects: { title: 'Projects', icon: 'folder2.png' },
-  about: { title: 'About Me', icon: 'person.png' },
-  contact: { title: 'Contact', icon: 'contacticon.png' },
-  pong: { title: 'Pong', icon: '🏓' },
-  pinball: { title: 'Pinball', icon: '🕹️' },
-  music: { title: 'Radio', icon: '🎵' },
-  pictures: { title: 'Pictures', icon: '🖼️' },
-  computer: { title: 'Computer', icon: '💻' },
+export const APPLICATIONS = {
+  home: { title: 'home', icon: 'IE_home.png', component: 'startMenuLeft' },
+  projects: { title: 'projects', icon: 'folder2.png', component: 'desktop' },
+  about: { title: 'about', icon: 'person.png', component: 'desktop' },
+  contact: { title: 'contact', icon: 'contacticon.png', component: 'desktop' },
+  pong: { title: 'pong', icon: 'game_controller.png', component: 'startMenuLeft' },
+  pinball: { title: 'pinball', icon: 'pinball.png', component: 'startMenuLeft' },
+  radio: { title: 'radio', icon: 'mp3.png', component: 'startMenuRight' },
+  pictures: { title: 'pictures', icon: 'picture.png', component: 'startMenuRight' },
+  computer: { title: 'computer', icon: 'computer.png', component: 'startMenuRight' },
 }
-
-export const DESKTOPICONS = [
-  { key: 'projects', icon: 'folder2.png', label: 'Projects' },
-  { key: 'about', icon: 'person.png', label: 'About Me' },
-  { key: 'contact', icon: 'contacticon.png', label: 'Contact' },
-]

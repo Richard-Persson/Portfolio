@@ -16,7 +16,7 @@ import PicturesContent from './components/startmenu/PicturesContent'
 import ComputerContent from './components/startmenu/ComputerContent'
 import ClippyAssistant from './components/taskbar/ClippyAssistant'
 import { useWindowDrag } from './hooks/useWindowDrag'
-import { DESKTOPICONS, SECTIONS } from './classes'
+import { APPLICATIONS } from './classes'
 
 
 const WINDOW_CONTENT = {
@@ -37,7 +37,7 @@ const WINDOW_WIDTH = 500
 
 function buildInitialWindows() {
   return Object.fromEntries(
-    Object.entries(SECTIONS).map(([key]) => [key, {
+    Object.entries(APPLICATIONS).map(([key]) => [key, {
       open: key === 'home',
       minimized: false,
       x: WINDOW_X,
@@ -121,15 +121,15 @@ export default function App() {
   return (
     <div className="desktop">
       <Wallpaper fullScreen>
-        <DesktopIcons items={DESKTOPICONS} onDoubleClick={openWindow} />
+        <DesktopIcons onDoubleClick={openWindow} />
 
         {openWindows.map(([name, win]) => (
           <XPWindow
             key={name}
             name={name}
             win={win}
-            title={SECTIONS[name].title}
-            icon={SECTIONS[name].icon}
+            title={APPLICATIONS[name].title}
+            icon={APPLICATIONS[name].icon}
             onMouseDown={handleMouseDown}
             onMinimize={toggleMinimize}
             onClose={closeWindow}
@@ -146,7 +146,7 @@ export default function App() {
       </Wallpaper>
 
       <Taskbar
-        windows={Object.entries(SECTIONS).reduce((acc, [key, val]) => {
+        windows={Object.entries(APPLICATIONS).reduce((acc, [key, val]) => {
           acc[key] = { ...windows[key], icon: val.icon, title: val.title }
           return acc
         }, {})}
@@ -161,7 +161,7 @@ export default function App() {
 
       {startOpen && (
         <StartMenu
-          sections={SECTIONS}
+          sections={APPLICATIONS}
           onItemClick={handleStartClick}
           onClose={() => setStartOpen(false)}
         />

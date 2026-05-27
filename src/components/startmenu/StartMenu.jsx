@@ -1,17 +1,14 @@
+import { APPLICATIONS } from '../../classes'
 import './StartMenu.css'
 
 export default function StartMenu({ onItemClick, onClose }) {
-  const leftItems = [
-    { key: 'home', icon: '🏠', title: 'Home' },
-    { key: 'pong', icon: '🏓', title: 'Pong' },
-    { key: 'pinball', icon: '🕹️', title: 'Pinball' },
-  ]
+  const leftItems = Object.entries(APPLICATIONS)
+    .filter(([, v]) => v.component === 'startMenuLeft')
+    .map(([key, v]) => ({ key, icon: v.icon, title: v.title }))
 
-  const rightItems = [
-    { icon: 'folder.png', label: 'Pictures', key: 'pictures' },
-    { icon: 'headset.png', label: 'Radio', key: 'music' },
-    { icon: 'computer.png', label: 'Computer', key: 'computer' },
-  ]
+  const rightItems = Object.entries(APPLICATIONS)
+    .filter(([, v]) => v.component === 'startMenuRight')
+    .map(([key, v]) => ({ key, icon: v.icon, title: v.title }))
 
   return (
     <div className="start-menu-wrapper">
@@ -36,7 +33,7 @@ export default function StartMenu({ onItemClick, onClose }) {
               <div key={item.key}>
                 {i === 1 && <div className="start-menu-divider" />}
                 <div className="start-menu-item" onClick={() => onItemClick(item.key)}>
-                  <span className="item-icon">{item.icon}</span>
+                  <img className="item-icon" src={item.icon} />
                   <div>
                     <div className="item-text">{item.title}</div>
                   </div>
@@ -48,12 +45,12 @@ export default function StartMenu({ onItemClick, onClose }) {
           <div className="start-menu-right">
             {rightItems.map(item => (
               <div
-                key={item.label}
+                key={item.key}
                 className="start-menu-item"
                 onClick={() => item.key && onItemClick(item.key)}
               >
                 <img className="item-icon" src={item.icon} />
-                <span className="item-text">{item.label}</span>
+                <span className="item-text">{item.title}</span>
               </div>
             ))}
           </div>
