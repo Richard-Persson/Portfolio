@@ -26,7 +26,7 @@ const WINDOW_CONTENT = {
   contact: <ContactContent />,
   pong: <PongContent />,
   pinball: <PinballContent />,
-  music: <RadioContent />,
+  radio: <RadioContent />,
   pictures: <PicturesContent />,
   computer: <ComputerContent />,
 }
@@ -135,7 +135,7 @@ export default function App() {
             onClose={closeWindow}
             onFocus={focusWindow}
           >
-            {name === 'music'
+            {name === 'radio'
               ? <RadioContent volume={volume} />
               : WINDOW_CONTENT[name]
             }
